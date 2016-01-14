@@ -1,0 +1,10 @@
+BRUTEFORCE(1)                               BSD General Commands Manual                     BRUTEFORCE(1)
+
+NAME
+    bruteforce - a trial and error method used by application programs to decode encrypted data such as      passwords
+
+SYNOPSIS/USAGE
+    bruteforce [ip_address]
+
+DESCRIPTION
+    In cryptography, a brute-force attack, or exhaustive key search, is a cryptanalytic attack that can,     in theory, be used against any encrypted data. Brute-force attacks are an application of brute-force     search, the general problem-solving technique of enumerating all candidates and checking each one.

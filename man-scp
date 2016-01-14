@@ -1,0 +1,11 @@
+CP(1)                               BSD General Commands Manual                               SCP(1)
+
+NAME
+     scp — secure copy (remote file copy program)
+
+SYNOPSIS
+     scp -file [file_name] -dest [destination_hostname]
+
+DESCRIPTION
+     scp copies files between hosts on a network.  It uses ssh for data transfer, and uses the
+     same authentication and provides the same security as ssh.

@@ -1,0 +1,11 @@
+NMAP(1)                               BSD General Commands Manual                               NMAP(1)
+
+NAME
+     nmap - Network exploration tool and security / port scanner
+
+SYNOPSIS/USAGE
+     nmap 
+
+DESCRIPTION
+     Nmap ("Network Mapper") is an open source tool for network exploration and security auditing. It was     designed to rapidly scan large networks
+

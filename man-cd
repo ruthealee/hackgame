@@ -1,0 +1,10 @@
+CD(1)                                       User Commands                                       CD(1)
+
+NAME
+       cd - change directory, used to navigate within a filesystem
+
+SYNOPSIS
+       cd [directory_to_enter]
+
+DESCRIPTION
+       Change the current directory to directory specified. 

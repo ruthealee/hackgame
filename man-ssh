@@ -1,0 +1,15 @@
+SSH(1)                               BSD General Commands Manual                               SSH(1)
+
+NAME
+     ssh — OpenSSH SSH client (remote login program)
+
+SYNOPSIS/USAGE
+    ssh [user]@[ip_address]
+
+DESCRIPTION
+     ssh (SSH client) is a program for logging into a remote machine and for executing commands on a
+     remote machine.  
+     ssh connects and logs into the specified hostname (with optional user name).  The user must
+     prove his/her identity to the remote machine using one of several methods such as passwords or
+     ssh keys.
+

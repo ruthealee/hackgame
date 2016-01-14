@@ -1,0 +1,12 @@
+RM(1)                                       User Commands                                       RM(1)
+
+NAME
+       rm - remove files or directories
+
+SYNOPSIS
+       rm [file]
+
+DESCRIPTION
+       This  manual  page  documents  the  GNU  version  of  rm.  rm removes each specified file.  By
+       default, it does not remove directories.
+

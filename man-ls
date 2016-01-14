@@ -1,0 +1,12 @@
+LS(1)                                       User Commands                                       LS(1)
+
+NAME
+       ls - list directory contents
+
+SYNOPSIS
+       ls
+
+DESCRIPTION
+       List  information about the FILEs (the current directory by default).  Sort entries alphabeti‐
+       cally by default.
+
