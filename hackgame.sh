@@ -11,7 +11,7 @@
 r='\033[31m'
 w='\033[0m'
 g='\033[32m'
-b='\033[1;34m'
+b='\033[34m'
 
 OPTS=$(getopt -o h --long help -- "$@")
 eval set -- "$OPTS"
@@ -192,6 +192,7 @@ sleep 2
 echo -e "\n You've successfully stolen the plans from Anonymous' server."
 echo -e "\n All the steps you have taken are a simplified version of how many hackers access and copy confidential data\n"
 echo -e "\n If you've enjoyed this we encourage you to check out games such as Uplink and Hacknet and to explore Linux further\n\n"
+echo -e $w""
 sleep 5
 }
 
