@@ -26,7 +26,7 @@ esac
 done
 
 function intro {
-echo -e "Logging in..."
+echo -e $g"Logging in..."
 echo ""
 sleep 1
 cat << "EOF"
@@ -75,14 +75,15 @@ echo ""
 sleep 1
 echo ""
 sleep 1
-echo -e $g"\n \nHello, welcome to Black Mesa. We need you to break into a hidden anonymous server and obtain a copy of their plans to hack the ministry of defence. You should have all the tools you need at your disposal to do so. Pick the right command for the job and enter it at the prompt. Are you ready to begin? [Y/N]"
+echo -e $g"\n \nHello, welcome to Black Mesa. We need you to break into a hidden anonymous server and obtain a copy of their plans to hack the ministry of defence. You should have all the tools you need at your disposal to do so. Pick the right command for the job and enter it at the prompt. Are you ready to begin?"
 echo ""
-read -p "neo@torvalds:~$: " INPUT
+read -p "[Y/N]: " INPUT
  if [[ ${INPUT} == "N" ]]; then
    echo "Oh dear better log out now then!"
    exit 1;
- else
-   echo -e "Great, good luck then!\n\n"
+ else [[ ${INPUT} == "Y" ]];
+   echo "You have accepted the job. Good luck."
+   echo ""
  fi
 }
 
@@ -175,8 +176,20 @@ read -p "neo@torvalds:~$: " INPUT
    if [[ ${INPUT} =~ "calvin" ]]; then
      echo -e "Password accepted. \n"
      sleep 2
-     echo -e "Welcome to Anonymous Node 1 \n"
-     echo -e "Logged in as root"
+     cat << "EOF"
+
+******************************************************************************************************
+______     __   __     ______     __   __     __  __     __    __     ______     __  __     ______   
+/\  __ \   /\ "-.\ \   /\  __ \   /\ "-.\ \   /\ \_\ \   /\ "-./  \   /\  __ \   /\ \/\ \   /\  ___\  
+\ \  __ \  \ \ \-.  \  \ \ \/\ \  \ \ \-.  \  \ \____ \  \ \ \-./\ \  \ \ \/\ \  \ \ \_\ \  \ \___  \ 
+ \ \_\ \_\  \ \_\\"\_\  \ \_____\  \ \_\\"\_\  \/\_____\  \ \_\ \ \_\  \ \_____\  \ \_____\  \/\_____\
+  \/_/\/_/   \/_/ \/_/   \/_____/   \/_/ \/_/   \/_____/   \/_/  \/_/   \/_____/   \/_____/   \/_____/
+                                                                                                      
+******************************************************************************************************
+  People shouldn't be afraid of their government. Governments should be afraid of their people. 
+EOF
+     echo ""
+     echo -e "Welcome to Anonymous Node 1\nYou are logged in as root"
      SUCCESS=1
      sleep 2
    else
@@ -192,19 +205,21 @@ done
 }
 
 function directory {
-echo -e "\n\n Let's see what directories and files are on the server! Remember, directories will show up in blue.\n"
+echo -e "\n\n Let's see what directories are on the server!"
 SUCCESS=0
 while [[ ${SUCCESS} == 0 ]]; do
 read -p "root@anonserver:~$: " INPUT
  if  [[ ${INPUT} =~ "ls" ]]; then
-    echo -e $b"\n home \n system \n plans \n"$g
+    echo -e "\nhome \nsystem \nplans \n"
+    echo ""
+    echo "Okay, now we need to pick the right directory and navigate into it."
     while [[ ${SUCCESS} == 0 ]]; do
     read -p "root@anonserver:~$: " INPUT
     if  [[ ${INPUT} =~ "cd plans" ]]; then
-    echo -e "\n Bank-heist-2010 \n Equipment-list \n Ministry-of-Defence-Attack \n"
+    echo -e "\nBank-heist-2010 \nEquipment-list \nMinistry-of-Defence-Attack \n"
     SUCCESS=1
     elif [[ ${INPUT} =~ "cd home" ]]; then
-    echo "This directory is empty"
+    echo "This directory is empty, try another"
     elif [[ ${INPUT} =~ "cd system" ]]; then
     echo "You do not have permission to access this directory"
     else
@@ -246,7 +261,7 @@ read -p "root@anonserver:~$: " INPUT
    echo -e "Success\n"
    sleep 1
    echo -e "Logging out of system\n"
-   sleep 1
+   sleep 4
    echo -e "anon-server: Goodbye\n"
    SUCCESS=1
  elif [[ ${INPUT} =~ "rm" ]]; then
@@ -258,11 +273,62 @@ done
 }
 
 function outro {
-echo -e "\ntorvalds: Welcome to the server\n You're logged in as Neo \n \n One file changed since login: Ministry-of-Defence-Attack recently added."
-sleep 2
-echo -e "\n You've successfully stolen the plans from Anonymous' server."
-echo -e "\n All the steps you have taken are a simplified version of how many hackers access and copy confidential data\n"
-echo -e "\n If you've enjoyed this we encourage you to check out games such as Uplink and Hacknet and to explore Linux further\n\n"
+echo -e "Logging in..."
+echo ""
+sleep 1
+cat << "EOF"
+
+                   .-;+$XHHHHHHX$+;-.
+                ,;X@@X%/;=----=:/%X@@X/
+              =$@@%=.              .=+H@X:
+            -XMX:                      =XMX=
+           /@@:                          =H@+
+          %@X,                            .$@$
+         +@X.                               $@%
+        -@@,                                .@@=
+        %@%                                  +@$
+        H@:                                  :@H
+        H@:         :HHHHHHHHHHHHHHHHHHX,    =@H
+        %@%         ;@M@@@@@@@@@@@@@@@@@H-   +@$
+        =@@,        :@@@@@@@@@@@@@@@@@@@@@= .@@:
+         +@X        :@@@@@@@@@@@@@@@M@@@@@@:%@%
+          $@$,      ;@@@@@@@@@@@@@@@@@M@@@@@@$.
+           +@@HHHHHHH@@@@@@@@@@@@@@@@@@@@@@@+
+            =X@@@@@@@@@@@@@@@@@@@@@@@@@@@@X=
+              :$@@@@@@@@@@@@@@@@@@@M@@@@$:
+                ,;$@@@@@@@@@@@@@@@@@@X/-
+                   .-;+$XXHHHHHX$+;-.
+
+                     BLACK MESA INC
+*********************************************************************************
+
+This is a BLACK MESA Computer System. This computer system,
+including all related equipment, networks, and network devices, are provided only for authorised use. 
+
+Use of this computer system, authorised or unauthorised, constitutes consent to monitoring of this 
+system. Evidence collected during monitoring may be used for administrative, criminal, or other 
+adverse action including disclosure BLACK MESA personnel, Aperture Laboratories personnel,
+authorised officials of other agencies, both domestic and foreign. Use of this
+system constitutes consent to monitoring for these purposes.
+
+
+LOG OFF IMMEDIATELY if you do not agree to the conditions stated in this warning.
+
+*********************************************************************************
+EOF
+sleep 1
+echo ""
+sleep 1
+echo ""
+echo -e "torvalds: Welcome to the server\n You're logged in as Neo\n \n"
+echo -e "One file changed since login: New file - Ministry-of-Defence-Attack"
+sleep 5
+echo -e "\nYou've successfully stolen the plans from Anonymous' server. Black Mesa will inform the relevant authorities to help them foil the attack."
+sleep 5
+
+echo -e "\nAll the steps you have taken are a simplified version of how many hackers access and copy confidential data\n"
+sleep 3
+echo -e "\nIf you've enjoyed this we encourage you to check out games such as Uplink and Hacknet and to explore Linux further\n\n"
 echo -e $w""
 sleep 5
 }
