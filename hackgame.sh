@@ -26,7 +26,7 @@ esac
 done
 
 function intro {
-echo -e $g"\n \nHello, welcome to Systems Inc. We need you to break into a hidden anonymous server and obtain a copy of their plans to hack the ministry of defence. You should have all the tools you need at your disposal to do so. Pick the right command for the job and enter it at the prompt. Are you ready to begin? [Y/N]"
+echo -e $g"\n \nHello, welcome to Black Mesa. We need you to break into a hidden anonymous server and obtain a copy of their plans to hack the ministry of defence. You should have all the tools you need at your disposal to do so. Pick the right command for the job and enter it at the prompt. Are you ready to begin? [Y/N]"
 echo ""
 read -p "neo@torvalds:~$: " INPUT
  if [[ ${INPUT} == "N" ]]; then
@@ -43,13 +43,24 @@ SUCCESS=0
 while [[ ${SUCCESS} == 0 ]]; do
 read -p "neo@torvalds:~$: " INPUT
  if [[ ${INPUT} =~ "nmap" ]]; then
-  echo "Scanning network.."
-  sleep 1
-  echo "..."
-  sleep 1
-  echo "..."
+  echo "Initializing"
+  sleep 2
+  bar="."
+  counter=0
+  echo -n "[scanning] ${bar}"
+   while [ ${counter} -lt 15 ]
+    do
+     counter=$((counter+1))
+     for i in "${bar}"
+      do
+       echo -ne "$i"
+       sleep 0.2
+      done
+     done
+   echo -e "  done \n"
   sleep 1
   echo -e "\n Hosts identified"
+  sleep 2
   echo -e " \n Hostname: www.google.com \n IP: 8.8.8.8 \n \n Hostname: www.anonserver.com \n IP: 162.141.131.11 \n\n Hostname: www.bobshomepc.com \n IP: 5.79.28.110 \n "
   SUCCESS=1
  else
@@ -69,13 +80,19 @@ read -p "neo@torvalds:~$: " INPUT
   sleep 1
   echo "Running algorithms"
   sleep 1
-  echo "Crack in progress [#    ] 20%"
-  sleep 1
-  echo "Crack in progress [##   ] 40%"
-  sleep 1
-  echo "Crack in progress [###  ] 60%"
-  sleep 1
-  echo "Crack in progress [#### ] 80%"
+  bar="#"
+  counter=0
+  echo -n "[cracking] ${bar}"
+   while [ ${counter} -lt 10 ]
+   do
+    counter=$((counter+1))
+   for i in "${bar}"
+    do
+        echo -ne "$i"
+        sleep 0.5
+    done
+   done
+  echo -e "  Complete! \n"
   sleep 1
   echo -e "\nSuccess! \n\n Credentials \n -------------- \n username: root \n password: calvin \n --------------"
   SUCCESS=1
@@ -104,10 +121,11 @@ read -p "neo@torvalds:~$: " INPUT
   read -p "root@62.141.131.11's password: " INPUT
    if [[ ${INPUT} =~ "calvin" ]]; then
      echo -e "Password accepted. \n"
-     sleep 1
-     echo -e "Welcome to Anonymous Mainframe Node 1 \n"
+     sleep 2
+     echo -e "Welcome to Anonymous Node 1 \n"
      echo -e "Logged in as root"
      SUCCESS=1
+     sleep 2
    else
      echo -e "Incorrect password, try again"
    fi
