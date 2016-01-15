@@ -75,7 +75,7 @@ echo ""
 sleep 1
 echo ""
 sleep 1
-echo -e $g"\n \nHello, welcome to Black Mesa. We need you to break into a hidden anonymous server and obtain a copy of their plans to hack the ministry of defence. You should have all the tools you need at your disposal to do so. Pick the right command for the job and enter it at the prompt. Are you ready to begin?"
+echo -e $w"\n\nHello, welcome to Black Mesa. We need you to break into a hidden anonymous server and obtain a copy of their plans to hack the ministry of defence. You should have all the tools you need at your disposal to do so. Pick the right command for the job and enter it at the prompt. All hints will be shown in white text like this. Are you ready to begin?"$g
 echo ""
 read -p "[Y/N]: " INPUT
  if [[ ${INPUT} == "N" ]]; then
@@ -88,12 +88,12 @@ read -p "[Y/N]: " INPUT
 }
 
 function port_scan {
-echo "First we need to find our target, there's lots of computer systems out there in the wild, so we need to make sure we have the correct one. Be sure to note down the IP address!"
+echo -e $w"First we need to find our target, there's lots of computer systems out there in the wild, so we need to make sure we have the correct one. Be sure to note down the IP address!"$g
 SUCCESS=0
 while [[ ${SUCCESS} == 0 ]]; do
 read -p "neo@torvalds:~$: " INPUT
  if [[ ${INPUT} =~ "nmap" ]]; then
-  echo "Initializing"
+  echo -e "Initializing"
   sleep 2
   bar="."
   counter=0
@@ -111,16 +111,16 @@ read -p "neo@torvalds:~$: " INPUT
   sleep 1
   echo -e "\n Hosts identified"
   sleep 2
-  echo -e " \n Hostname: www.google.com \n IP: 8.8.8.8 \n \n Hostname: www.anonserver.com \n IP: 162.141.131.11 \n\n Hostname: www.bobshomepc.com \n IP: 5.79.28.110 \n "
+  echo -e " \n Hostname: www.google.com \n IP: 8.8.8.8 \n \n Hostname: www.anonserver.com \n IP: 162.141.131.11 \n\n Hostname: www.lara-c-home-pc.com \n IP: 5.79.28.110 \n "
   SUCCESS=1
  else
-  echo "That doesn't seem right, try a different command or check your spelling"
+  echo -e "That doesn't seem right, try a different command or check your spelling"
  fi
 done
 }
 
 function bruteforce {
-echo -e "\nNow we know what's out there we need to somehow get the login details for the correct server.\n"
+echo -e $w"\nNow we know what's out there we need to somehow get the login details for the correct server.\n"$g
 SUCCESS=0
 while [[ ${SUCCESS} == 0 ]]; do
 read -p "neo@torvalds:~$: " INPUT
@@ -157,7 +157,7 @@ echo "Complete"
   echo -e $r"Warning! Attempting to bruteforce Google's servers will result in criminal charges being pressed. Your IP address has been logged."$g
   elif
   [[ ${INPUT} =~ "bruteforce 5" ]]; then
-  echo -e $r"This is a private computer belonging to Bob. Please don't attempt to bruteforce it."$g
+  echo -e $r"This is a private computer belonging to the Croft family. Attempting to bruteforce it may leave you on the business end of a bow and arrow."$g
   else
   echo "That doesn't seem right, try a different command or check your spelling."
   fi
@@ -166,7 +166,7 @@ done
 }
 
 function login {
-echo "Great, we've cracked the credentials. Let's login to that server now."
+echo -e $w"Great, we've cracked the credentials. Let's login to that server now."$g
 SUCCESS=0
 while [[ ${SUCCESS} == 0 ]]; do
 read -p "neo@torvalds:~$: " INPUT
@@ -205,14 +205,14 @@ done
 }
 
 function directory {
-echo -e "\n\n Let's see what directories are on the server!"
+echo -e $w"\n\nLet's see what directories are on the server!"$g
 SUCCESS=0
 while [[ ${SUCCESS} == 0 ]]; do
 read -p "root@anonserver:~$: " INPUT
  if  [[ ${INPUT} =~ "ls" ]]; then
     echo -e "\nhome \nsystem \nplans \n"
     echo ""
-    echo "Okay, now we need to pick the right directory and navigate into it."
+    echo -e $w"Okay, now we need to pick the right directory and navigate into it."$g
     while [[ ${SUCCESS} == 0 ]]; do
     read -p "root@anonserver:~$: " INPUT
     if  [[ ${INPUT} =~ "cd plans" ]]; then
@@ -233,7 +233,7 @@ done
 }
 
 function copy_file {
-echo "Looks like we found the plans! Now we need to copy them over to our own server. Remember, your home server is called 'torvalds'"
+echo -e $w"Looks like we found the plans! Now we need to copy them over to our own server. Remember, your home server is called 'torvalds'"$g
 SUCCESS=0
 while [[ ${SUCCESS} == 0 ]]; do
 read -p "root@anonserver:~$: " INPUT
@@ -251,7 +251,7 @@ done
 }
 
 function remove_logs {
-echo "Great work, we have the file. The last step is to erase our tracks. The log we want to delete is called /var/log/secure"
+echo -e $w"Great work, we have the file. The last step is to erase our tracks. The log we want to delete is called /var/log/secure"$g
 SUCCESS=0
 while [[ ${SUCCESS} == 0 ]]; do
 read -p "root@anonserver:~$: " INPUT
@@ -320,16 +320,16 @@ sleep 1
 echo ""
 sleep 1
 echo ""
-echo -e "torvalds: Welcome to the server\n You're logged in as Neo\n \n"
+echo -e "torvalds: Welcome to the server\nYou're logged in as Neo\n \n"
 echo -e "One file changed since login: New file - Ministry-of-Defence-Attack"
 sleep 5
-echo -e "\nYou've successfully stolen the plans from Anonymous' server. Black Mesa will inform the relevant authorities to help them foil the attack."
+echo -e $w"\nYou've successfully stolen the plans from Anonymous' server. Black Mesa will inform the relevant authorities to help them foil the attack."
 sleep 5
 
 echo -e "\nAll the steps you have taken are a simplified version of how many hackers access and copy confidential data\n"
 sleep 3
 echo -e "\nIf you've enjoyed this we encourage you to check out games such as Uplink and Hacknet and to explore Linux further\n\n"
-echo -e $w""
+echo -e ""
 sleep 5
 }
 
