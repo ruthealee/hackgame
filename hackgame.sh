@@ -26,6 +26,55 @@ esac
 done
 
 function intro {
+echo -e "Logging in..."
+echo ""
+sleep 1
+cat << "EOF"
+
+                   .-;+$XHHHHHHX$+;-.
+                ,;X@@X%/;=----=:/%X@@X/
+              =$@@%=.              .=+H@X:
+            -XMX:                      =XMX=
+           /@@:                          =H@+
+          %@X,                            .$@$
+         +@X.                               $@%
+        -@@,                                .@@=
+        %@%                                  +@$
+        H@:                                  :@H
+        H@:         :HHHHHHHHHHHHHHHHHHX,    =@H
+        %@%         ;@M@@@@@@@@@@@@@@@@@H-   +@$
+        =@@,        :@@@@@@@@@@@@@@@@@@@@@= .@@:
+         +@X        :@@@@@@@@@@@@@@@M@@@@@@:%@%
+          $@$,      ;@@@@@@@@@@@@@@@@@M@@@@@@$.
+           +@@HHHHHHH@@@@@@@@@@@@@@@@@@@@@@@+
+            =X@@@@@@@@@@@@@@@@@@@@@@@@@@@@X=
+              :$@@@@@@@@@@@@@@@@@@@M@@@@$:
+                ,;$@@@@@@@@@@@@@@@@@@X/-
+                   .-;+$XXHHHHHX$+;-.
+
+		     BLACK MESA INC
+
+*********************************************************************************
+
+This is a BLACK MESA Computer System. This computer system,
+including all related equipment, networks, and network devices, are provided only for authorised use. 
+
+Use of this computer system, authorised or unauthorised, constitutes consent to monitoring of this 
+system. Evidence collected during monitoring may be used for administrative, criminal, or other 
+adverse action including disclosure BLACK MESA personnel, Aperture Laboratories personnel,
+authorised officials of other agencies, both domestic and foreign. Use of this
+system constitutes consent to monitoring for these purposes.
+
+
+LOG OFF IMMEDIATELY if you do not agree to the conditions stated in this warning.
+
+*********************************************************************************
+EOF
+sleep 1
+echo ""
+sleep 1
+echo ""
+sleep 1
 echo -e $g"\n \nHello, welcome to Black Mesa. We need you to break into a hidden anonymous server and obtain a copy of their plans to hack the ministry of defence. You should have all the tools you need at your disposal to do so. Pick the right command for the job and enter it at the prompt. Are you ready to begin? [Y/N]"
 echo ""
 read -p "neo@torvalds:~$: " INPUT
