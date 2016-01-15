@@ -80,19 +80,23 @@ read -p "neo@torvalds:~$: " INPUT
   sleep 1
   echo "Running algorithms"
   sleep 1
-  bar="#"
-  counter=0
-  echo -n "[cracking] ${bar}"
-   while [ ${counter} -lt 10 ]
-   do
-    counter=$((counter+1))
-   for i in "${bar}"
-    do
-        echo -ne "$i"
-        sleep 0.5
-    done
-   done
-  echo -e "  Complete! \n"
+  max=10
+  printf "Cracking [" 
+  tput sc 
+  i=0 
+  while [[ ${i} -le ${max} ]];do  
+   j=0 
+    while [[ ${j} -le ${i} ]];do 
+     echo -n "#" 
+     let j=${j}+1 
+     done 
+  printf "%-$((${max}-${i}))s] $(((${i})*100/${max}))%%" 
+  tput rc 
+  sleep 1 
+  let i=${i}+1 
+done 
+echo  
+echo "Complete"
   sleep 1
   echo -e "\nSuccess! \n\n Credentials \n -------------- \n username: root \n password: calvin \n --------------"
   SUCCESS=1
