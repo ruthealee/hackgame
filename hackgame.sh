@@ -13,6 +13,8 @@ w='\033[0m'
 g='\033[32m'
 b='\033[34m'
 
+trap "echo -e ""; echo -e \"$w Recieved a request to terminate.  Goodbye and good luck.\"; exit" SIGINT SIGTERM
+
 OPTS=$(getopt -o h --long help -- "$@")
 eval set -- "$OPTS"
 
