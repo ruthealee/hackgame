@@ -3,8 +3,8 @@
 # Demonstration for Schools
 #
 # author Ruth Lee
-# version 1.0
-# date {TBC}
+# version 2.0
+# date 02.02.2016 
 # email ruth@ruthealee.co.uk
 #
 
@@ -77,7 +77,7 @@ echo ""
 sleep 1
 echo ""
 sleep 1
-echo -e $w"\n\nHello, welcome to Black Mesa. We need you to break into a hidden anonymous server and obtain a copy of their plans to hack the ministry of defence. You should have all the tools you need at your disposal to do so. Pick the right command for the job and enter it at the prompt. All hints will be shown in white text like this. Are you ready to begin?"$g
+echo -e $w"\n\nHello, welcome to Black Mesa. Black Mesa is a leader in scientific research. Recently, one of our smaller divisions had plans for a new device stolen from them. This prototype, the Aperture Science Portable Quantum Tunneling Device (Codename: Portal Gun) is vital to our future research. We need you to break into the systems of the culprits, a hacktivist group called 'anonymous' and re-obtain these plans. You should have all the tools you need at your disposal to do so. Pick the right command for the job and enter it at the prompt. All hints will be shown in white text like this. Are you ready to begin?"$g
 echo ""
 read -p "[Y/N]: " INPUT
  if [[ ${INPUT} == "N" ]]; then
@@ -218,7 +218,7 @@ read -p "root@anonserver:~$: " INPUT
     while [[ ${SUCCESS} == 0 ]]; do
     read -p "root@anonserver:~$: " INPUT
     if  [[ ${INPUT} =~ "cd plans" ]]; then
-    echo -e "\nBank-heist-2010 \nEquipment-list \nMinistry-of-Defence-Attack \n"
+    echo -e "\nBank-heist-2010 \nEquipment-list \nPortal-Gun-Blueprints \n"
     SUCCESS=1
     elif [[ ${INPUT} =~ "cd home" ]]; then
     echo "This directory is empty, try another"
@@ -239,10 +239,10 @@ echo -e $w"Looks like we found the plans! Now we need to copy them over to our o
 SUCCESS=0
 while [[ ${SUCCESS} == 0 ]]; do
 read -p "root@anonserver:~$: " INPUT
- if  [[ ${INPUT} =~ "scp -file Ministry-of-Defence-Attack -dest torvalds" ]]; then
+ if  [[ ${INPUT} =~ "scp -file Portal-Gun-Blueprints -dest torvalds" ]]; then
    echo -e "\nCopying file"
    sleep 1
-   echo -e "Success: Ministry-of-Defence-Attack copied to torvalds\n"
+   echo -e "Success: Portal-Gun-Blueprints copied to torvalds\n"
    SUCCESS=1
  elif [[ ${INPUT} =~ "scp " ]]; then
     echo "That might not be the right format or you might be using the wrong filename or destination. Try scp -file <filename> -dest <destination>"
@@ -323,9 +323,9 @@ echo ""
 sleep 1
 echo ""
 echo -e "torvalds: Welcome to the server\nYou're logged in as Neo\n \n"
-echo -e "One file changed since login: New file - Ministry-of-Defence-Attack"
+echo -e "One file changed since login: New file - Portal-Gun-Blueprints"
 sleep 5
-echo -e $w"\nYou've successfully stolen the plans from Anonymous' server. Black Mesa will inform the relevant authorities to help them foil the attack."
+echo -e $w"\nYou've successfully liberated the plans from Anonymous' server. Black Mesa will now be able to proceed with developeing our Genetic Lifeform and Disk Operating System (GLaDOS)."
 sleep 5
 
 echo -e "\nAll the steps you have taken are a simplified version of how many hackers access and copy confidential data\n"
