@@ -32,28 +32,6 @@ echo -e $g"Logging in..."
 echo ""
 sleep 1
 cat << "EOF"
-
-                   .-;+$XHHHHHHX$+;-.
-                ,;X@@X%/;=----=:/%X@@X/
-              =$@@%=.              .=+H@X:
-            -XMX:                      =XMX=
-           /@@:                          =H@+
-          %@X,                            .$@$
-         +@X.                               $@%
-        -@@,                                .@@=
-        %@%                                  +@$
-        H@:                                  :@H
-        H@:         :HHHHHHHHHHHHHHHHHHX,    =@H
-        %@%         ;@M@@@@@@@@@@@@@@@@@H-   +@$
-        =@@,        :@@@@@@@@@@@@@@@@@@@@@= .@@:
-         +@X        :@@@@@@@@@@@@@@@M@@@@@@:%@%
-          $@$,      ;@@@@@@@@@@@@@@@@@M@@@@@@$.
-           +@@HHHHHHH@@@@@@@@@@@@@@@@@@@@@@@+
-            =X@@@@@@@@@@@@@@@@@@@@@@@@@@@@X=
-              :$@@@@@@@@@@@@@@@@@@@M@@@@$:
-                ,;$@@@@@@@@@@@@@@@@@@X/-
-                   .-;+$XXHHHHHX$+;-.
-
 		     BLACK MESA INC
 
 *********************************************************************************
@@ -72,25 +50,40 @@ LOG OFF IMMEDIATELY if you do not agree to the conditions stated in this warning
 
 *********************************************************************************
 EOF
-sleep 1
 echo ""
 sleep 1
-echo ""
-sleep 1
-echo -e $w"\n\nHello, welcome to Black Mesa. Black Mesa is a leader in scientific research. Recently, one of our smaller divisions had plans for a new device stolen from them. This prototype, the Aperture Science Portable Quantum Tunneling Device (Codename: Portal Gun) is vital to our future research. We need you to break into the systems of the culprits, a hacktivist group called 'anonymous' and re-obtain these plans. You should have all the tools you need at your disposal to do so. Pick the right command for the job and enter it at the prompt. All hints will be shown in white text like this. Are you ready to begin?"$g
-echo ""
+echo -e $w"Hello, welcome to Black Mesa."
+sleep 2
+echo -e $w"Black Mesa is a leader in scientific research."
+sleep 4
+echo -e $w"Recently, one of our smaller divisions had plans for a new device stolen from them."
+sleep 6
+echo -e $w"This prototype, the Aperture Science Portable Quantum Tunneling Device (Codename: Portal Gun) is vital to our future research.\n"
+sleep 6
+echo -e $w"We need you to:"
+echo -e $w"1) Break into the systems of the culprits, a hacktivist group called 'anonymous'"
+echo -e $w"2) Re-obtain these plans.\n"
+sleep 6
+echo -e $w"You should have all the tools you need at your disposal to do so. Pick the right command for the job and enter it at the prompt."
+sleep 6
+echo -e  $w"All hints will be shown in white text like this. Are you ready to begin?\n"$g
 read -p "[Y/N]: " INPUT
  if [[ ${INPUT} == "N" ]]; then
+ 	echo
    echo "Oh dear better log out now then!"
    exit 1;
  else [[ ${INPUT} == "Y" ]];
+   echo
    echo "You have accepted the job. Good luck."
    echo ""
  fi
 }
 
 function port_scan {
-echo -e $w"First we need to find our target, there's lots of computer systems out there in the wild, so we need to make sure we have the correct one. Be sure to note down the IP address!"$g
+echo -e $w"First we need to find our target. There's lots of computer systems out there in the wild, so we need to make sure we have the correct one. Be sure to note down the IP address!\n"
+echo -e $w"Command that will help: nmap"
+echo -e $w"nmap - Network exploration tool and security / port scanner"$g
+echo
 SUCCESS=0
 while [[ ${SUCCESS} == 0 ]]; do
 read -p "neo@torvalds:~$: " INPUT
@@ -109,7 +102,7 @@ read -p "neo@torvalds:~$: " INPUT
        sleep 0.2
       done
      done
-   echo -e "  done \n"
+   echo -e "  done"
   sleep 1
   echo -e "\n Hosts identified"
   sleep 2
@@ -122,7 +115,9 @@ done
 }
 
 function bruteforce {
-echo -e $w"\nNow we know what's out there we need to somehow get the login details for the correct server.\n"$g
+echo -e $w"Now we know what's out there we need to somehow get the login details for the correct server.\n"
+echo -e $w"Command that will help: bruteforce [ip]"
+echo -e $w"bruteforce - Network tool to find the password\n"$g
 SUCCESS=0
 while [[ ${SUCCESS} == 0 ]]; do
 read -p "neo@torvalds:~$: " INPUT
@@ -168,7 +163,9 @@ done
 }
 
 function login {
-echo -e $w"Great, we've cracked the credentials. Let's login to that server now."$g
+echo -e $w"\nGreat, we've cracked the credentials. Let's login to that server now.\n"
+echo -e $w"Command that will help: ssh [user]@[host]"
+echo -e $w"ssh — OpenSSH SSH client (remote login program)\n"$g
 SUCCESS=0
 while [[ ${SUCCESS} == 0 ]]; do
 read -p "neo@torvalds:~$: " INPUT
@@ -207,14 +204,17 @@ done
 }
 
 function directory {
-echo -e $w"\n\nLet's see what directories are on the server!"$g
+echo -e $w"\nLet's see what directories are on the server!\n"
+echo -e $w"Command that will help: ls"
+echo -e $w"ls - list directory contents\n"$g
 SUCCESS=0
 while [[ ${SUCCESS} == 0 ]]; do
 read -p "root@anonserver:~$: " INPUT
  if  [[ ${INPUT} =~ "ls" ]]; then
     echo -e "\nhome \nsystem \nplans \n"
-    echo ""
-    echo -e $w"Okay, now we need to pick the right directory and navigate into it."$g
+    echo -e $w"Okay, now we need to pick the right directory and navigate into it.\n"
+	 echo -e $w"Command that will help: cd [directory]"
+	 echo -e $w"cd - get in a directory\n"$g
     while [[ ${SUCCESS} == 0 ]]; do
     read -p "root@anonserver:~$: " INPUT
     if  [[ ${INPUT} =~ "cd plans" ]]; then
@@ -235,7 +235,9 @@ done
 }
 
 function copy_file {
-echo -e $w"Looks like we found the plans! Now we need to copy them over to our own server. Remember, your home server is called 'torvalds'"$g
+echo -e $w"Looks like we found the plans! Now we need to copy them over to our own server. Remember, your home server is called 'torvalds'\n"
+echo -e $w"Command that will help: scp -file [file] -dest [name of your home server]"
+echo -e $w"ls - list directory contents\n"$g
 SUCCESS=0
 while [[ ${SUCCESS} == 0 ]]; do
 read -p "root@anonserver:~$: " INPUT
@@ -253,7 +255,9 @@ done
 }
 
 function remove_logs {
-echo -e $w"Great work, we have the file. The last step is to erase our tracks. The log we want to delete is called /var/log/secure"$g
+echo -e $w"Great work, we have the file. The last step is to erase our tracks. The log we want to delete is called /var/log/secure\n"
+echo -e $w"Command that will help: rm [file or directory]"
+echo -e $w"rm - remove files or directories\n"$g
 SUCCESS=0
 while [[ ${SUCCESS} == 0 ]]; do
 read -p "root@anonserver:~$: " INPUT
